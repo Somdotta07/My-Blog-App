@@ -610,3 +610,218 @@ Started GET "/users/posts/index" for 127.0.0.1 at 2022-02-15 14:02:26 +0100
   
 ActionController::RoutingError (No route matches [GET] "/users/posts/index"):
   
+Started GET "/" for 127.0.0.1 at 2022-02-15 15:14:11 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 68.6ms | Allocations: 512)
+Completed 200 OK in 612ms (Views: 397.4ms | ActiveRecord: 0.0ms | Allocations: 3479)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-02-15 15:14:21 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 136)
+  Rendered layout layouts/application.html.erb (Duration: 1396.5ms | Allocations: 64338)
+Completed 500 Internal Server Error in 1416ms (ActiveRecord: 0.0ms | Allocations: 65446)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/Users/Jhilick/Desktop/Projects/BlogApp/tmp/cache/assets/sprockets/v4.0.0/gU/gUNjnm-TO5pH4DlQrjQtjxO5lPPHOrIqllh0zLkCSZg.cache.22560.9676.320881, C:/Users/Jhilick/Desktop/Projects/BlogApp/tmp/cache/assets/sprockets/v4.0.0/gU/gUNjnm-TO5pH4DlQrjQtjxO5lPPHOrIqllh0zLkCSZg.cache)):
+  
+sprockets (4.0.2) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.0.2) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.0.2) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.0.2) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.0.2) lib/sprockets/cache.rb:93:in `fetch'
+sprockets (4.0.2) lib/sprockets/base.rb:71:in `file_digest'
+sprockets (4.0.2) lib/sprockets.rb:210:in `block in <module:Sprockets>'
+sprockets (4.0.2) lib/sprockets/dependencies.rb:68:in `resolve_dependency'
+sprockets (4.0.2) lib/sprockets/cached_environment.rb:54:in `resolve_dependency'
+sprockets (4.0.2) lib/sprockets/loader.rb:288:in `block in resolve_dependencies'
+C:/Ruby31-x64/lib/ruby/3.1.0/set.rb:511:in `each_key'
+C:/Ruby31-x64/lib/ruby/3.1.0/set.rb:511:in `each'
+sprockets (4.0.2) lib/sprockets/loader.rb:288:in `map'
+sprockets (4.0.2) lib/sprockets/loader.rb:288:in `resolve_dependencies'
+sprockets (4.0.2) lib/sprockets/loader.rb:220:in `load_from_unloaded'
+sprockets (4.0.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.0.2) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.0.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.0.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.0.2) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.0.2) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.0.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.0.2) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.0.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.0.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.0.2) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.0.2) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.0.2) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `block in synchronize'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:19:in `execute'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:363:in `run_task'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `block (3 levels) in create_worker'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `loop'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `block (2 levels) in create_worker'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `catch'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block in create_worker'
+Started GET "/users" for 127.0.0.1 at 2022-02-15 15:14:28 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 139.9ms | Allocations: 27275)
+Completed 200 OK in 145ms (Views: 141.7ms | ActiveRecord: 0.0ms | Allocations: 27622)
+
+
+Started GET "/users/show" for 127.0.0.1 at 2022-02-15 15:14:41 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 108)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 2351)
+Completed 200 OK in 28ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 2698)
+
+
+Started GET "/users/10" for 127.0.0.1 at 2022-02-15 15:15:01 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 2283)
+Completed 200 OK in 35ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 2571)
+
+
+Started GET "/users/10/posts" for 127.0.0.1 at 2022-02-15 15:15:09 +0100
+  
+ActionController::RoutingError (uninitialized constant PostsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PostsControllers
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/users/10/posts" for 127.0.0.1 at 2022-02-15 15:16:25 +0100
+  
+ActionController::RoutingError (uninitialized constant PostsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PostsControllers
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/users/10/posts/10" for 127.0.0.1 at 2022-02-15 15:17:49 +0100
+  
+ActionController::RoutingError (uninitialized constant PostsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PostsControllers
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2022-02-15 15:23:28 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.4ms | Allocations: 512)
+Completed 200 OK in 288ms (Views: 184.4ms | ActiveRecord: 0.0ms | Allocations: 3480)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-15 15:23:41 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.1ms | Allocations: 307)
+Completed 200 OK in 14ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 1007)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-02-15 15:23:44 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 113.5ms | Allocations: 27123)
+Completed 200 OK in 124ms (Views: 120.0ms | ActiveRecord: 0.0ms | Allocations: 28096)
+
+
+Started GET "/users/10" for 127.0.0.1 at 2022-02-15 15:23:56 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 111)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 2391)
+Completed 200 OK in 32ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 2759)
+
+
+Started GET "/users/10/posts" for 127.0.0.1 at 2022-02-15 15:24:04 +0100
+  
+ActionController::RoutingError (uninitialized constant PostsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PostsControllers
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2022-02-15 15:30:46 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.2ms | Allocations: 512)
+Completed 200 OK in 69ms (Views: 30.1ms | ActiveRecord: 0.0ms | Allocations: 3479)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-02-15 15:30:54 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 136)
+  Rendered layout layouts/application.html.erb (Duration: 852.6ms | Allocations: 27416)
+Completed 200 OK in 866ms (Views: 860.7ms | ActiveRecord: 0.0ms | Allocations: 28456)
+
+
+Started GET "/users/10" for 127.0.0.1 at 2022-02-15 15:31:03 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 108)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 2359)
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 2720)
+
+
+Started GET "/users/10/posts" for 127.0.0.1 at 2022-02-15 15:31:11 +0100
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"10"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 137)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 2694)
+Completed 200 OK in 42ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 3468)
+
+
+Started GET "/users/10/posts/11" for 127.0.0.1 at 2022-02-15 15:31:21 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"user_id"=>"10", "id"=>"11"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 108)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 2368)
+Completed 200 OK in 45ms (Views: 37.8ms | ActiveRecord: 0.0ms | Allocations: 2744)
+
+
