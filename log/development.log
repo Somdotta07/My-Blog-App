@@ -392,3 +392,221 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 92ms (Views: 20.9ms | ActiveRecord: 0.0ms | Allocations: 3476)
 
 
+Started GET "/" for 127.0.0.1 at 2022-02-15 13:33:21 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 317)
+  Rendered layout layouts/application.html.erb (Duration: 2390.5ms | Allocations: 69298)
+Completed 500 Internal Server Error in 2463ms (ActiveRecord: 0.0ms | Allocations: 72383)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/Users/Jhilick/Desktop/Projects/BlogApp/tmp/cache/assets/sprockets/v4.0.0/tO/tOV76UIWSovSKGiJitwzqX-_sQEeVCIJuqhWV8lploU.cache.22320.7940.370779, C:/Users/Jhilick/Desktop/Projects/BlogApp/tmp/cache/assets/sprockets/v4.0.0/tO/tOV76UIWSovSKGiJitwzqX-_sQEeVCIJuqhWV8lploU.cache)):
+  
+sprockets (4.0.2) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.0.2) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.0.2) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.0.2) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.0.2) lib/sprockets/cache.rb:93:in `fetch'
+sprockets (4.0.2) lib/sprockets/base.rb:71:in `file_digest'
+sprockets (4.0.2) lib/sprockets.rb:210:in `block in <module:Sprockets>'
+sprockets (4.0.2) lib/sprockets/dependencies.rb:68:in `resolve_dependency'
+sprockets (4.0.2) lib/sprockets/cached_environment.rb:54:in `resolve_dependency'
+sprockets (4.0.2) lib/sprockets/loader.rb:288:in `block in resolve_dependencies'
+C:/Ruby31-x64/lib/ruby/3.1.0/set.rb:511:in `each_key'
+C:/Ruby31-x64/lib/ruby/3.1.0/set.rb:511:in `each'
+sprockets (4.0.2) lib/sprockets/loader.rb:288:in `map'
+sprockets (4.0.2) lib/sprockets/loader.rb:288:in `resolve_dependencies'
+sprockets (4.0.2) lib/sprockets/loader.rb:220:in `load_from_unloaded'
+sprockets (4.0.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.0.2) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.0.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.0.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.0.2) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.0.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.0.2) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.0.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.0.2) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.0.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.0.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.0.2) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.0.2) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.0.2) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `block in synchronize'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:19:in `execute'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:363:in `run_task'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `block (3 levels) in create_worker'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `loop'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `block (2 levels) in create_worker'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `catch'
+concurrent-ruby (1.1.9) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block in create_worker'
+Started GET "/" for 127.0.0.1 at 2022-02-15 13:34:16 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 209.4ms | Allocations: 27271)
+Completed 200 OK in 214ms (Views: 210.5ms | ActiveRecord: 0.0ms | Allocations: 27649)
+
+
+Started GET "/index" for 127.0.0.1 at 2022-02-15 13:35:07 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+Started GET "/index/posts" for 127.0.0.1 at 2022-02-15 13:35:29 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/index/posts"):
+  
+Started GET "/index/posts/show" for 127.0.0.1 at 2022-02-15 13:36:08 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/index/posts/show"):
+  
+Started GET "/index/show" for 127.0.0.1 at 2022-02-15 13:36:58 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/index/show"):
+  
+Started GET "/" for 127.0.0.1 at 2022-02-15 13:39:31 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 124.0ms | Allocations: 512)
+Completed 200 OK in 177ms (Views: 135.5ms | ActiveRecord: 0.0ms | Allocations: 3479)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-15 13:39:45 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.4ms | Allocations: 307)
+Completed 200 OK in 19ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 1007)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-02-15 13:40:17 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 133)
+  Rendered layout layouts/application.html.erb (Duration: 135.5ms | Allocations: 27120)
+Completed 200 OK in 155ms (Views: 148.0ms | ActiveRecord: 0.0ms | Allocations: 28100)
+
+
+Started GET "/users/:id" for 127.0.0.1 at 2022-02-15 13:40:31 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>":id"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 110)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 2368)
+Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 0.0ms | Allocations: 2735)
+
+
+Started GET "/users/:id/posts" for 127.0.0.1 at 2022-02-15 13:40:52 +0100
+  
+ActionController::RoutingError (uninitialized constant PostsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PostsControllers
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/users/1/posts" for 127.0.0.1 at 2022-02-15 13:44:17 +0100
+  
+ActionController::RoutingError (uninitialized constant PostsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PostsControllers
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/users/1/posts/:id" for 127.0.0.1 at 2022-02-15 13:44:42 +0100
+  
+ActionController::RoutingError (uninitialized constant PostsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PostsControllers
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/users/1/posts/:id" for 127.0.0.1 at 2022-02-15 13:54:56 +0100
+  
+ActionController::RoutingError (uninitialized constant PostsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PostsControllers
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2022-02-15 13:59:55 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.2ms | Allocations: 512)
+Completed 200 OK in 50ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 3479)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-02-15 14:00:08 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 136)
+  Rendered layout layouts/application.html.erb (Duration: 140.9ms | Allocations: 27154)
+Completed 200 OK in 152ms (Views: 146.8ms | ActiveRecord: 0.0ms | Allocations: 28194)
+
+
+Started GET "/users/index/posts" for 127.0.0.1 at 2022-02-15 14:00:14 +0100
+  
+ActionController::RoutingError (uninitialized constant PostsController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PostsControllers
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/users/show" for 127.0.0.1 at 2022-02-15 14:01:03 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 107)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 2551)
+Completed 200 OK in 26ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 2934)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-02-15 14:01:33 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 2259)
+Completed 200 OK in 23ms (Views: 19.4ms | ActiveRecord: 0.0ms | Allocations: 2550)
+
+
+Started GET "/users/posts" for 127.0.0.1 at 2022-02-15 14:02:09 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"posts"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 2272)
+Completed 200 OK in 27ms (Views: 23.9ms | ActiveRecord: 0.0ms | Allocations: 2564)
+
+
+Started GET "/users/posts/index" for 127.0.0.1 at 2022-02-15 14:02:26 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/posts/index"):
+  
