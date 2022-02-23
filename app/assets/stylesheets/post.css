@@ -12,6 +12,11 @@
   border-radius: 8px;
 }
 
+.post-comment {
+  display: flex;
+  justify-content: right;
+}
+
 .user_data_post > p {
   align-self: flex-end;
 }

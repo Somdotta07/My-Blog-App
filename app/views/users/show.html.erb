@@ -1,6 +1,6 @@
 <div class="user_c">
   <div class="user_img">
-    <%= image_tag("image1.png", width:'150px', height:'200px') %>
+    <%= image_tag("Tom.png", width:'150px', height:'200px') %>
   </div>
   <div class="user_data">
     <h2><%= @user.name%></h2>
@@ -17,13 +17,13 @@
 
 <% @user.recent_posts.each do |post| %>
   <div class="comment_c">
-      <h2><%= post.title%></h2>
+      <h2># Post : <%= post.title%></h2>
       <p><%= post.text%></p>
       <h3>Comment <%= post.comments_counter%>,  <span>Likes <%= post.likes_counter%></span></h3>
   </div>
 <%end%>
 
-<div class="button-wrapper">
+<div class="button-div">
   <button class="button">
       <%= link_to "See all posts", user_posts_path(@user), {:class => "button_class"} %>
   </button>

@@ -90,7 +90,7 @@ body {
   font-size: 30px;
 }
 
-.button-wrapper {
+.button-div {
   width: 100%;
   text-align: center;
   color: rgb(27, 26, 27);
@@ -98,15 +98,14 @@ body {
 }
 
 .button {
-    
-  padding: 20px;
+  padding: 22px;
   font-size: 20px;
-  background-color: rgb(111, 0, 255);
-  color: rgb(189, 185, 190);
+  background-color: rgb(30, 172, 49);
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
 .button_class {
   text-decoration: none;
-  color: rgb(68, 0, 255);
+  color: rgb(255, 255, 255);
 }
