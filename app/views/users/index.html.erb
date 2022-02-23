@@ -1,3 +1,13 @@
-<h1>User name</h1>
-<p>My-blog-app/views/users/index.html.erb</p>
-<p>Go to posts <a href="/users/index/posts">here</a></p>
+<% @users.each do |user| %>
+    <div class="user_c">
+      <div class="user_img">
+        <%= image_tag("Tom.png", width:'150px', height:'170px') %>
+      </div>
+      <div class="user_data">
+        <%= link_to user_path(user.id) do %>
+        <h2><%= user.name%></h2>
+        <% end %>
+        <p>Number of posts: <%= user.posts_counter %></p>
+      </div>
+    </div>
+  <%end%>
