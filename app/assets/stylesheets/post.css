@@ -51,11 +51,9 @@
 }
 
 .post-title-c {
-  width: 50%;
   margin: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 
