@@ -15,22 +15,24 @@ class PostsController < ApplicationController
   end
 
   def create
-    new_post = current_user.posts.build(post_params)
-    new_post.comments_counter = 0
+    new_post = current_user.posts.new(post_params)
     new_post.likes_counter = 0
-  
+    new_post.comments_counter = 0
+    new_post.update_posts_counter
     respond_to do |format|
       format.html do
         if new_post.save
-          redirect_to user_post_path(new_post.user_id, new_post.id), notice: 'Post has been successfully created!'
+          redirect_to "/users/#{new_post.user.id}/posts/", notice: 'Success!'
         else
-          render :new, alert: 'Post not created. Please try again!'
+          render :new, alert: 'Error occured!'
         end
       end
     end
   end
 
+  private
+
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.require(:data).permit(:title, :text)
   end
 end
