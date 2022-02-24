@@ -34,3 +34,24 @@
   border-radius: 8px;
   margin: 0 auto;
 }
+
+.comment-c {
+  width: 100%;
+}
+
+.comment-c > textarea {
+  width: 80%;
+  height: 85px;
+}
+
+.post-form-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-title-c {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+}
