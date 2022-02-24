@@ -29,10 +29,4 @@ class PostsController < ApplicationController
       end
     end
   end
-
-  # private
-
-  # def post_params
-  #   params.require(:data).permit(:title, :text)
-  # end
 end
