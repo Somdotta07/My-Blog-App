@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   describe 'Post model' do
-    subject { Post.new(title: 'New post', text: 'Hi there', user_id: 2) }
+    user = User.create(name: 'Somdotta', bio: 'bio') 
+    subject do 
+     Post.new(title: 'New post', text: 'Hi there', user_id: user)
+    end
     before { subject.save }
 
     it 'check if the title is not blank' do
@@ -17,14 +20,13 @@ RSpec.describe Post, type: :model do
       expect(subject).to_not be_valid
     end
 
-    it 'check if it increases the number of comments' do
-      prev_posts_counter = User.find(1).posts_counter
-      subject.update_posts_counter
-      expect(User.find(1).posts_counter).to eq(prev_posts_counter + 1)
+    it 'validates that likes counter is greater than or equal to 0' do
+      subject.likes_counter = -1
+      expect(subject).to_not be_valid
     end
 
     it 'loads only the recent 5 comments' do
-      expect(subject.recent_comments.length).to eq(5)
+      expect(subject.recent_comments).to eq(subject.comments.last(5))
     end
   end
 end

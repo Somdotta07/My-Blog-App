@@ -1,15 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  describe 'Like model' do
-    subject { Like.new(user_id: 1, post_id: 2) }
+  it 'tests that Like model is created correctly' do
+    like = Like.new
+    like.build_user(name: 'Somdotta')
+    like.build_post(text: '')
+    expect(like).to be_valid
+  end
 
-    before { subject.save }
-
-    it 'check if it increases the count of likes' do
-      prev_likes_counter = Post.find(1).likes_counter
-      subject.update_likes_counter
-      expect(Post.find(1).likes_counter).to eq(prev_likes_counter + 1)
-    end
+  it 'updates a posts likes correctly' do
+    user = User.new(name: 'Tom', posts_counter: 0)
+    user2 = User.create!(name: 'Lilly', posts_counter: 0)
+    post = user2.posts.create!(title: 'Post1', text: 'This is a post', likes_counter: 0, comments_counter: 0)
+    post.likes.create!(user: user)
+    post.likes_counter = post.likes.length
+    expect(post.likes_counter).to eql(1)
   end
 end
