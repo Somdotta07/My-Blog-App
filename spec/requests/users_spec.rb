@@ -13,12 +13,12 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'checks if correct placeholder is shown' do
-      expect(response.body).to include('User name')
+      expect(response.body).to include('All Users')
     end
   end
 
   describe 'GET /show' do
-    before(:example) { get user_path(10) }
+    before(:example) { get user_path(1) }
 
     it 'checks if action returns correct response status' do
       expect(response).to have_http_status(:ok)

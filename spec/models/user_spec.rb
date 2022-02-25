@@ -1,5 +1,28 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'User model' do
+    subject { User.new(name: 'Amy', photo: 'Tom.png', bio: 'bio', posts_counter: 0) }
+
+    before { subject.save }
+
+    it 'Check the name is not blank' do
+      subject.name = nil
+      expect(subject).to_not be_valid
+    end
+
+    it 'check if the posts_counter numeric' do
+      subject.posts_counter = ''
+      expect(subject).to_not be_valid
+    end
+
+    it 'check if the posts_counter greater than or equal to zero' do
+      expect(subject.posts_counter).to be >= 0
+    end
+  end
+  describe 'User Model method' do
+    it 'loads only the recent 3 posts' do
+      expect(subject.recent_posts.length).to eq(3)
+    end
+  end
 end

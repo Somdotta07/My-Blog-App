@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
-    before(:example) { get user_posts_path(10) }
+    before(:example) { get user_posts_path(1) }
 
     it 'checks if action returns correct response status' do
       expect(response).to have_http_status(:ok)
@@ -13,12 +13,12 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'checks if correct placeholder is shown' do
-      expect(response.body).to include('Post #index by username')
+      expect(response.body).to include('Post for a given user')
     end
   end
 
   describe 'GET /show' do
-    before(:example) { get user_post_path(10, 0o5) }
+    before(:example) { get user_post_path(1, 1) }
 
     it 'checks if action returns correct response status' do
       expect(response).to have_http_status(:ok)
