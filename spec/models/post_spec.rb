@@ -16,7 +16,7 @@ RSpec.describe Post, type: :model do
     it 'check if the title is not exceeding 250 characters' do
       subject.title = 'Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world
       Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello
-      world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world '
+      world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world'
       expect(subject).to_not be_valid
     end
 
