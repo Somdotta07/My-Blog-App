@@ -22,5 +22,9 @@ RSpec.describe Post, type: :model do
       subject.update_posts_counter
       expect(User.find(1).posts_counter).to eq(prev_posts_counter + 1)
     end
+
+    it 'loads only the recent 5 comments' do
+      expect(subject.recent_comments.length).to eq(5)
+    end
   end
 end
