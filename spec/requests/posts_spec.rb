@@ -2,7 +2,7 @@
 
 # RSpec.describe 'Posts', type: :request do
 #   describe 'GET /index' do
-#     before(:each) { get user_posts_path user_id: 1 }
+#     before(:each) { get '/users/2/posts' }
 
 #     it 'checks if action returns correct response status' do
 #       expect(response).to have_http_status(:ok)
@@ -18,7 +18,7 @@
 #   end
 
 #   describe 'GET /show' do
-#     before(:example) { get user_post_path user_id: 1 , id: 2 }
+#     before(:example) { get '/users/2/posts/2' }
 
 #     it 'checks if action returns correct response status' do
 #       expect(response).to have_http_status(:ok)
