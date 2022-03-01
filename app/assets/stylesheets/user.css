@@ -113,3 +113,51 @@ body {
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
+
+form,
+.new_class,
+a {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30%;
+}
+
+form,
+.field,
+#user_email,
+#user_password {
+  width: 70%;
+}
+
+#user_email,
+#user_password {
+  border: 5px solid rgb(27, 26, 27);
+  border-radius: 8px;
+}
+
+.actions input {
+  width: 49%;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  box-shadow: 2px 5px;
+}
+
+#navbarNav {
+  margin-right: 10%;
+}
+
+.nav-item,
+.nav-link {
+  display: flex;
+  flex-direction: row;
+}
+
+#user_password_confirmation {
+  margin-bottom: 2%;
+}
+
+form,
+a {
+  margin-top: 1%;
+}

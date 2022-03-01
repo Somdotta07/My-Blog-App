@@ -2,7 +2,10 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.0'
+gem 'bootstrap', '~> 4.2.1'
+gem 'devise'
 gem 'ffi'
+gem 'jquery-rails'
 gem 'rails-controller-testing'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.2', '>= 7.0.2.2'
@@ -35,14 +38,14 @@ gem 'jbuilder'
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem 'bcrypt', '~> 3.1.7'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo'
 gem 'tzinfo-data'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', require: false
+gem 'bootsnap', '<= 1.1.0'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 # Use Sass to process CSS
