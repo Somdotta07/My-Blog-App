@@ -114,17 +114,23 @@ body {
   color: rgb(255, 255, 255);
 }
 
-form, .new_class, a {
+form,
+.new_class,
+a {
   display: flex;
   flex-direction: column;
   margin-left: 30%;
 }
 
-form, .field, #user_email, #user_password {
+form,
+.field,
+#user_email,
+#user_password {
   width: 70%;
 }
 
-#user_email, #user_password {
+#user_email,
+#user_password {
   border: 5px solid rgb(27, 26, 27);
   border-radius: 8px;
 }
@@ -141,7 +147,8 @@ form, .field, #user_email, #user_password {
   margin-right: 10%;
 }
 
-.nav-item, .nav-link {
+.nav-item,
+.nav-link {
   display: flex;
   flex-direction: row;
 }
@@ -150,6 +157,7 @@ form, .field, #user_email, #user_password {
   margin-bottom: 2%;
 }
 
-form, a {
+form,
+a {
   margin-top: 1%;
 }
