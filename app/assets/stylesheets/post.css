@@ -24,6 +24,7 @@
 .comments {
   display: flex;
   flex-direction: column;
+
   /* border: 5px solid rgb(27, 26, 27); */
   width: 85%;
   height: 240px;
@@ -58,18 +59,19 @@
   justify-content: space-between;
 }
 
-.del, .post-like-btns, .submit-btn{
- width: 15%;
- background-color: brown;
- color: white;
- padding: 12px;
- font-size: 20px;
- margin-left: 85%;
- border-radius: 10px;
+.del,
+.post-like-btns,
+.submit-btn {
+  width: 15%;
+  background-color: brown;
+  color: white;
+  padding: 12px;
+  font-size: 20px;
+  margin-left: 85%;
+  border-radius: 10px;
 }
 
-.post-like-btns, .submit-btn {
+.post-like-btns,
+.submit-btn {
   background-color: rgb(42, 165, 52);
 }
-
-
