@@ -80,6 +80,12 @@ rspec spec
 - [Twitter](https://github.com/Somdotta07)
 - [LinkedIn](https://linkedin.com/in/somdottasarkar)
 
+👤 **Simo Nkosi**
+
+- [@KDlamini](https://github.com/KDlamini)
+- [@RealSimoNkosi](https://twitter.com/RealSimoNkosi)
+- [LinkedIn](https://www.linkedin.com/in/simo-nkosi-418523180/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
