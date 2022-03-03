@@ -31,11 +31,10 @@
   </div>
 <%end%>
 
-
-
-
-<div class="button-div">
-  <button class="button">
-  Pagination
- </button>
-</div>
+<%if @user.posts_counter > 2%>
+  <div class="button-div">
+    <button class="button">
+        Pagination
+    </button>
+  </div>
+<%end%>
