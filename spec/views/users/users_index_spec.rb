@@ -1,47 +1,41 @@
 require 'rails_helper'
-# rubocop:disable Metrics/BlockLength
-RSpec.feature 'Users Page' do
-  feature 'shows users' do
-    background do
-      visit new_user_session_path
-      @user1 = User.create(name: 'Tom', bio: 'bio',
-                           photo: 'https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png',
-                           email: 'tom@gmail.com', password: 'password', confirmed_at: Time.now)
+RSpec.describe 'Users Page' do
+  describe 'shows users' do
+    before(:each) do
+      @user1 = User.create(name: 'Amy', photo: 'Tom.png', bio: 'bio', posts_counter: 0, email: 'amy@gmail.com',
+                           password: 'password', confirmed_at: Time.now)
       @user2 = User.create(name: 'Amy', bio: 'bio',
-                           photo: 'https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png',
-                           email: 'kchenry@gmail.com', password: 'password', confirmed_at: Time.now)
+                           photo: 'Tom.png',
+                           email: 'amy@gmail.com', password: 'password', confirmed_at: Time.now)
       @user3 = User.create(name: 'Jerry', bio: 'bio',
-                           photo: 'https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png',
+                           photo: 'Tom.png',
                            email: 'jerry@gmail.com', password: 'password', confirmed_at: Time.now)
-      within 'form' do
-        fill_in 'Email', with: @user1.email
-        fill_in 'Password', with: @user1.password
-      end
+      visit root_path
+      fill_in 'Email', with: 'amy@gmail.com'
+      fill_in 'Password', with: 'password'
       click_button 'Log in'
     end
 
-    scenario 'Shows the username' do
-      expect(page).to have_content @user1.name
-      expect(page).to have_content @user2.name
-      expect(page).to have_content @user3.name
+    it 'Shows the username' do
+      expect(page).to have_content('Amy')
     end
 
-    scenario "Shows the user's photo" do
+    it "Shows the user's photo" do
       all('img').each do |i|
-        expect(i[:src]).to eq('https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png')
+        expect(i[:src]).to eq('/assets/Tom-5a9e58b49e16acdc1e1977ef1c38c7dd2a0634c4650d4cbb09f43adc7b2cdd4b.png')
       end
     end
 
-    scenario 'Shows the number of posts' do
+    it 'Shows the number of posts' do
       all(:css, '.num_post').each do |post|
         expect(post).to have_content('Number of posts: 0')
       end
     end
 
-    scenario "after clicking on the user, it will be redirected to that user's show page" do
-      click_link @user1.id.to_s
-      expect(page).to have_current_path(user_path(@user1.id))
+    it "after clicking on the user, it will be redirected to that user's show page" do
+      expect(page).to have_content('Number of posts: 0')
+      click_on 'Amy'
+      expect(page).to have_no_content('Jerry')
     end
   end
-  # rubocop:enable Metrics/BlockLength
 end
