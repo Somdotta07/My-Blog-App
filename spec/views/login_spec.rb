@@ -37,7 +37,7 @@ RSpec.feature 'Logins', type: :feature do
       end
       click_button 'Log in'
       expect(page).to have_current_path(user_session_path)
-      end
+    end
   end
   # rubocop:enable Metrics/BlockLength
 end
