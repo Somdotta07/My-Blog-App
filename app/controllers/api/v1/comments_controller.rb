@@ -2,34 +2,34 @@ module Api
   module V1
     class CommentsController < ApplicationController
       def index
-        post_id = params[:post_id]
-        @comments = Comment.where({ post_id: }).order(:created_at)
-        render json: {
-          success: true, message: "Loaded comments for post: #{post_id}", data: { comments: @comments }
-        }
+        if request.headers['X-AUTH-TOKEN']
+          @user = User.find_by_api_token(request.headers['X-AUTH-TOKEN'])
+          @comments = Comment.where(user_id: @user.id)
+          respond_to do |format|
+            format.json { render json: @comments, status: :ok }
+          end
+        else
+          respond_to do |format|
+            format.json { render json: 'please sign in or add the token'.to_json, status: :ok }
+          end
+        end
       end
 
       def create
-        @post = Post.find(params[:post_id])
-        @comment = @post.comments.new(text: comment_params[:text], user_id: current_user.id)
-
-        if @comment.save
-          render json: { success: true, message: 'Loaded comments', data: { comment: @comment } }, status: :created
+        if request.headers['X-AUTH-TOKEN']
+          @user = User.find_by_api_token(request.headers['X-AUTH-TOKEN'])
+          new_comment = @user.comments.new(text: params[:text])
+          new_comment.post_id = params[:post_id].to_i
+          if new_comment.save
+            render json: { success: true, message: 'Loaded comments', data: { comment: @comment } }, status: :created
+          else
+            render json: { success: false, errors: @comment.errors }, status: :unprocessable_entity
+          end
         else
-          render json: { success: false, errors: @comment.errors }, status: :unprocessable_entity
+          respond_to do |format|
+            format.json { render json: 'please sign in or add the token', status: :ok }
+          end
         end
-      rescue ActiveRecord::RecordNotFound
-        no_record(params[:post_id])
-      end
-
-      private
-
-      def no_record(post)
-        render json: { success: false, message: "This post: #{post} does not exist" }, status: :not_found
-      end
-
-      def comment_params
-        params.require(:comment).permit(:text)
       end
     end
   end
