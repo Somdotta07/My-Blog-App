@@ -16891,3 +16891,752 @@ Processing by Api::V1::CommentsController#index as JSON
 Completed 200 OK in 22ms (Views: 3.2ms | ActiveRecord: 4.5ms | Allocations: 2610)
 
 
+Started GET "/" for 127.0.0.1 at 2022-03-04 17:46:02 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 50ms (ActiveRecord: 0.0ms | Allocations: 3094)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-04 17:46:03 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 643)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 47.0ms | Allocations: 4226)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 376)
+  Rendered layout layouts/application.html.erb (Duration: 357.9ms | Allocations: 46073)
+Completed 200 OK in 448ms (Views: 395.7ms | ActiveRecord: 8.8ms | Allocations: 59187)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-03-04 17:46:07 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 219)
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 158)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 14.7ms | Allocations: 2513)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 143)
+  Rendered layout layouts/application.html.erb (Duration: 67.7ms | Allocations: 9405)
+Completed 200 OK in 88ms (Views: 82.4ms | ActiveRecord: 0.0ms | Allocations: 10779)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-03-04 17:46:35 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Jerry", "email"=>"jerry@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "posts_counter"=>"0"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (3.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jerry@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 335ms (ActiveRecord: 4.2ms | Allocations: 14200)
+
+
+  
+NoMethodError (undefined method `jti=' for #<User id: nil, name: "Jerry", photo: nil, bio: nil, posts_counter: 0, created_at: "2022-03-04 16:46:36.355758000 +0000", updated_at: "2022-03-04 16:46:36.355758000 +0000", email: "jerry@gmail.com", role: nil>):
+  
+activemodel (7.0.2.2) lib/active_model/attribute_methods.rb:458:in `method_missing'
+devise-jwt (0.9.0) lib/devise/jwt/revocation_strategies/jti_matcher.rb:46:in `initialize_jti'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:687:in `block (2 levels) in default_terminator'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:686:in `catch'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:686:in `block in default_terminator'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:106:in `run_callbacks'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:929:in `_run_create_callbacks'
+activerecord (7.0.2.2) lib/active_record/callbacks.rb:461:in `_create_record'
+activerecord (7.0.2.2) lib/active_record/timestamp.rb:108:in `_create_record'
+activerecord (7.0.2.2) lib/active_record/persistence.rb:1066:in `create_or_update'
+activerecord (7.0.2.2) lib/active_record/callbacks.rb:457:in `block in create_or_update'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+activerecord (7.0.2.2) lib/active_record/autosave_association.rb:370:in `around_save_collection_association'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:138:in `run_callbacks'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:929:in `_run_save_callbacks'
+activerecord (7.0.2.2) lib/active_record/callbacks.rb:457:in `create_or_update'
+activerecord (7.0.2.2) lib/active_record/timestamp.rb:126:in `create_or_update'
+activerecord (7.0.2.2) lib/active_record/persistence.rb:616:in `save'
+activerecord (7.0.2.2) lib/active_record/validations.rb:47:in `save'
+activerecord (7.0.2.2) lib/active_record/transactions.rb:298:in `block in save'
+activerecord (7.0.2.2) lib/active_record/transactions.rb:354:in `block in with_transaction_returning_status'
+activerecord (7.0.2.2) lib/active_record/connection_adapters/abstract/transaction.rb:319:in `block in within_new_transaction'
+activesupport (7.0.2.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (7.0.2.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (7.0.2.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (7.0.2.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (7.0.2.2) lib/active_record/connection_adapters/abstract/transaction.rb:317:in `within_new_transaction'
+activerecord (7.0.2.2) lib/active_record/connection_adapters/abstract/database_statements.rb:316:in `transaction'
+activerecord (7.0.2.2) lib/active_record/transactions.rb:350:in `with_transaction_returning_status'
+activerecord (7.0.2.2) lib/active_record/transactions.rb:298:in `save'
+activerecord (7.0.2.2) lib/active_record/suppressor.rb:50:in `save'
+devise (4.8.1) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (7.0.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.2.2) lib/abstract_controller/base.rb:214:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.2.2) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.2.2) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.2.2) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.2.2) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.2.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.2.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.2.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.2.2) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.2.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.2.2) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.2.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.2.2) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.2.2) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.2.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:850:in `call'
+warden-jwt_auth (0.6.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.6.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (2.2.3) lib/rack/builder.rb:244:in `call'
+warden-jwt_auth (0.6.0) lib/warden/jwt_auth/middleware.rb:22:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/cookies.rb:693:in `call'
+activerecord (7.0.2.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.2.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.2.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.2.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.2.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6045777927375424770)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6045777927375424770)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-03-04 17:50:33 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 52ms (ActiveRecord: 0.0ms | Allocations: 3091)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-04 17:50:34 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 643)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 58.4ms | Allocations: 4226)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 376)
+  Rendered layout layouts/application.html.erb (Duration: 362.3ms | Allocations: 46027)
+Completed 200 OK in 454ms (Views: 398.9ms | ActiveRecord: 17.6ms | Allocations: 59132)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-03-04 17:50:39 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 219)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 158)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 17.4ms | Allocations: 2513)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 143)
+  Rendered layout layouts/application.html.erb (Duration: 80.5ms | Allocations: 9405)
+Completed 200 OK in 101ms (Views: 95.6ms | ActiveRecord: 0.0ms | Allocations: 10773)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-03-04 17:50:57 +0100
+Started POST "/users" for 127.0.0.1 at 2022-03-04 17:50:57 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"jerry ", "email"=>"jerry@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "posts_counter"=>"0"}, "commit"=>"Sign up"}
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"jerry ", "email"=>"jerry@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "posts_counter"=>"0"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (3.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jerry@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 626ms (ActiveRecord: 4.4ms | Allocations: 15444)
+
+
+  
+NoMethodError (undefined method `jti=' for #<User id: nil, name: "jerry ", photo: nil, bio: nil, posts_counter: 0, created_at: "2022-03-04 16:50:58.199481000 +0000", updated_at: "2022-03-04 16:50:58.199481000 +0000", email: "jerry@gmail.com", role: nil>):
+  
+activemodel (7.0.2.2) lib/active_model/attribute_methods.rb:458:in `method_missing'
+devise-jwt (0.9.0) lib/devise/jwt/revocation_strategies/jti_matcher.rb:46:in `initialize_jti'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:687:in `block (2 levels) in default_terminator'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:686:in `catch'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:686:in `block in default_terminator'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:106:in `run_callbacks'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:929:in `_run_create_callbacks'
+activerecord (7.0.2.2) lib/active_record/callbacks.rb:461:in `_create_record'
+activerecord (7.0.2.2) lib/active_record/timestamp.rb:108:in `_create_record'
+activerecord (7.0.2.2) lib/active_record/persistence.rb:1066:in `create_or_update'
+activerecord (7.0.2.2) lib/active_record/callbacks.rb:457:in `block in create_or_update'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+activerecord (7.0.2.2) lib/active_record/autosave_association.rb:370:in `around_save_collection_association'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:138:in `run_callbacks'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:929:in `_run_save_callbacks'
+activerecord (7.0.2.2) lib/active_record/callbacks.rb:457:in `create_or_update'
+activerecord (7.0.2.2) lib/active_record/timestamp.rb:126:in `create_or_update'
+activerecord (7.0.2.2) lib/active_record/persistence.rb:616:in `save'
+activerecord (7.0.2.2) lib/active_record/validations.rb:47:in `save'
+activerecord (7.0.2.2) lib/active_record/transactions.rb:298:in `block in save'
+activerecord (7.0.2.2) lib/active_record/transactions.rb:354:in `block in with_transaction_returning_status'
+activerecord (7.0.2.2) lib/active_record/connection_adapters/abstract/transaction.rb:319:in `block in within_new_transaction'
+activesupport (7.0.2.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (7.0.2.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (7.0.2.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (7.0.2.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (7.0.2.2) lib/active_record/connection_adapters/abstract/transaction.rb:317:in `within_new_transaction'
+activerecord (7.0.2.2) lib/active_record/connection_adapters/abstract/database_statements.rb:316:in `transaction'
+activerecord (7.0.2.2) lib/active_record/transactions.rb:350:in `with_transaction_returning_status'
+activerecord (7.0.2.2) lib/active_record/transactions.rb:298:in `save'
+activerecord (7.0.2.2) lib/active_record/suppressor.rb:50:in `save'
+devise (4.8.1) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (7.0.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.2.2) lib/abstract_controller/base.rb:214:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.2.2) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.2.2) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.2.2) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.2.2) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.2.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.2.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.2.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.2.2) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.2.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.2.2) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.2.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.2.2) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.2.2) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.2.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:850:in `call'
+warden-jwt_auth (0.6.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.6.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (2.2.3) lib/rack/builder.rb:244:in `call'
+warden-jwt_auth (0.6.0) lib/warden/jwt_auth/middleware.rb:22:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/cookies.rb:693:in `call'
+activerecord (7.0.2.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.2.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.2.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.2.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.2.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (4.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jerry@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 1033ms (ActiveRecord: 22.0ms | Allocations: 236665)
+
+
+  
+NoMethodError (undefined method `jti=' for #<User id: nil, name: "jerry ", photo: nil, bio: nil, posts_counter: 0, created_at: "2022-03-04 16:50:58.627449000 +0000", updated_at: "2022-03-04 16:50:58.627449000 +0000", email: "jerry@gmail.com", role: nil>):
+  
+activemodel (7.0.2.2) lib/active_model/attribute_methods.rb:458:in `method_missing'
+devise-jwt (0.9.0) lib/devise/jwt/revocation_strategies/jti_matcher.rb:46:in `initialize_jti'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:687:in `block (2 levels) in default_terminator'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:686:in `catch'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:686:in `block in default_terminator'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:106:in `run_callbacks'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:929:in `_run_create_callbacks'
+activerecord (7.0.2.2) lib/active_record/callbacks.rb:461:in `_create_record'
+activerecord (7.0.2.2) lib/active_record/timestamp.rb:108:in `_create_record'
+activerecord (7.0.2.2) lib/active_record/persistence.rb:1066:in `create_or_update'
+activerecord (7.0.2.2) lib/active_record/callbacks.rb:457:in `block in create_or_update'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+activerecord (7.0.2.2) lib/active_record/autosave_association.rb:370:in `around_save_collection_association'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:138:in `run_callbacks'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:929:in `_run_save_callbacks'
+activerecord (7.0.2.2) lib/active_record/callbacks.rb:457:in `create_or_update'
+activerecord (7.0.2.2) lib/active_record/timestamp.rb:126:in `create_or_update'
+activerecord (7.0.2.2) lib/active_record/persistence.rb:616:in `save'
+activerecord (7.0.2.2) lib/active_record/validations.rb:47:in `save'
+activerecord (7.0.2.2) lib/active_record/transactions.rb:298:in `block in save'
+activerecord (7.0.2.2) lib/active_record/transactions.rb:354:in `block in with_transaction_returning_status'
+activerecord (7.0.2.2) lib/active_record/connection_adapters/abstract/transaction.rb:319:in `block in within_new_transaction'
+activesupport (7.0.2.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (7.0.2.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (7.0.2.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (7.0.2.2) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (7.0.2.2) lib/active_record/connection_adapters/abstract/transaction.rb:317:in `within_new_transaction'
+activerecord (7.0.2.2) lib/active_record/connection_adapters/abstract/database_statements.rb:316:in `transaction'
+activerecord (7.0.2.2) lib/active_record/transactions.rb:350:in `with_transaction_returning_status'
+activerecord (7.0.2.2) lib/active_record/transactions.rb:298:in `save'
+activerecord (7.0.2.2) lib/active_record/suppressor.rb:50:in `save'
+devise (4.8.1) app/controllers/devise/registrations_controller.rb:19:in `create'
+actionpack (7.0.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.2.2) lib/abstract_controller/base.rb:214:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.2.2) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.2.2) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.2.2) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.2.2) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.2.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.2.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.2.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.2.2) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.2.2) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.2.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.2.2) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.2.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.2.2) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.2.2) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.2.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.2.2) lib/action_dispatch/routing/route_set.rb:850:in `call'
+warden-jwt_auth (0.6.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.6.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (2.2.3) lib/rack/builder.rb:244:in `call'
+warden-jwt_auth (0.6.0) lib/warden/jwt_auth/middleware.rb:22:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/cookies.rb:693:in `call'
+activerecord (7.0.2.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.2.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.2.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.2.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.2.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.2.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.2.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-03-04 18:26:56 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 81ms (ActiveRecord: 0.0ms | Allocations: 3091)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-04 18:26:57 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 6.1ms | Allocations: 704)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 75.3ms | Allocations: 4286)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 369)
+  Rendered layout layouts/application.html.erb (Duration: 459.4ms | Allocations: 45954)
+Completed 200 OK in 559ms (Views: 498.4ms | ActiveRecord: 18.8ms | Allocations: 59070)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-03-04 18:27:22 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 219)
+  Rendered devise/shared/_links.html.erb (Duration: 2.2ms | Allocations: 215)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 22.7ms | Allocations: 2570)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 122.9ms | Allocations: 9453)
+Completed 200 OK in 141ms (Views: 137.1ms | ActiveRecord: 0.0ms | Allocations: 10822)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-03-04 18:27:41 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Jerry", "email"=>"jerry@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "posts_counter"=>"0"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jerry@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (144.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmed_at", "confirmation_token", "confirmation_sent_at", "unconfirmed_email", "role") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["name", "Jerry"], ["photo", nil], ["bio", nil], ["posts_counter", 0], ["created_at", "2022-03-04 17:27:41.969044"], ["updated_at", "2022-03-04 17:27:41.969044"], ["email", "jerry@gmail.com"], ["encrypted_password", "$2a$12$JD1OZR2TH2XDs7mDFBhZVubvmnIZRocItge9WTLSLsob28Xb7r2Rq"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["confirmed_at", nil], ["confirmation_token", "1CKKJSx9C1zinsDJXmMK"], ["confirmation_sent_at", "2022-03-04 17:27:41.969205"], ["unconfirmed_email", nil], ["role", nil]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (Duration: 4.4ms | Allocations: 346)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 85.4ms
+Delivered mail 62224c0f999fb_24707d509163e@LAPTOP-616I0L8C.mail (10469.4ms)
+Date: Fri, 04 Mar 2022 18:27:43 +0100
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: jerry@gmail.com
+Message-ID: <62224c0f999fb_24707d509163e@LAPTOP-616I0L8C.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome jerry@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=1CKKJSx9C1zinsDJXmMK">Confirm my account</a></p>
+
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 12813ms (ActiveRecord: 150.6ms | Allocations: 39549)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-04 18:27:54 +0100
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 369)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-03-04 18:27:54 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 175)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1081)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 105)
+  Rendered layout layouts/application.html.erb (Duration: 69.6ms | Allocations: 7840)
+Completed 200 OK in 77ms (Views: 72.7ms | ActiveRecord: 0.0ms | Allocations: 8597)
+
+
+Started GET "/users/confirmation?confirmation_token=[FILTERED]" for ::1 at 2022-03-04 18:27:58 +0100
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["confirmation_token", "1CKKJSx9C1zinsDJXmMK"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (50.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "confirmed_at" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2022-03-04 17:27:58.646902"], ["confirmed_at", "2022-03-04 17:27:58.645852"], ["id", 2]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 102ms (ActiveRecord: 52.9ms | Allocations: 6244)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-03-04 18:27:58 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 175)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1083)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 105)
+  Rendered layout layouts/application.html.erb (Duration: 77.5ms | Allocations: 7844)
+Completed 200 OK in 86ms (Views: 80.7ms | ActiveRecord: 0.0ms | Allocations: 8568)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-03-04 18:28:18 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jerry@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jerry@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users
+Completed 302 Found in 299ms (ActiveRecord: 0.5ms | Allocations: 2709)
+
+
+Started GET "/users" for ::1 at 2022-03-04 18:28:18 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (Duration: 16.0ms | Allocations: 2219)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 77)
+  Rendered layout layouts/application.html.erb (Duration: 91.5ms | Allocations: 8872)
+Completed 200 OK in 114ms (Views: 104.0ms | ActiveRecord: 0.8ms | Allocations: 11001)
+
+
+Started GET "/users/2" for ::1 at 2022-03-04 18:28:28 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (3.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (Duration: 675.5ms | Allocations: 19314)
+  Rendered shared/_navbar.html.erb (Duration: 3.8ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 759.5ms | Allocations: 26043)
+Completed 200 OK in 779ms (Views: 756.4ms | ActiveRecord: 8.2ms | Allocations: 29149)
+
+
+Started GET "/users/2/posts" for ::1 at 2022-03-04 18:28:31 +0100
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 323.6ms | Allocations: 2402)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 396.2ms | Allocations: 9288)
+Completed 200 OK in 434ms (Views: 401.6ms | ActiveRecord: 2.8ms | Allocations: 14214)
+
+
+Started GET "/users/2/posts/new" for ::1 at 2022-03-04 18:28:33 +0100
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 56.9ms | Allocations: 828)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 56)
+  Rendered layout layouts/application.html.erb (Duration: 116.7ms | Allocations: 7578)
+Completed 200 OK in 147ms (Views: 118.1ms | ActiveRecord: 2.3ms | Allocations: 13111)
+
+
+Started POST "/users/2/posts" for ::1 at 2022-03-04 18:28:45 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"post 1", "text"=>"izdgbn'bn;p"}, "commit"=>"Post", "user_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/post.rb:9:in `update_posts_counter'
+  [1m[36mUser Update All (30.2ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 2]]
+  ↳ app/models/post.rb:9:in `update_posts_counter'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:26:in `block (2 levels) in create'
+  [1m[36mPost Create (114.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "post 1"], ["text", "izdgbn'bn;p"], ["comments_counter", 0], ["likes_counter", 0], ["created_at", "2022-03-04 17:28:45.967288"], ["updated_at", "2022-03-04 17:28:45.967288"], ["user_id", 2]]
+  ↳ app/controllers/posts_controller.rb:26:in `block (2 levels) in create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:26:in `block (2 levels) in create'
+Redirected to http://localhost:3000/users/2/posts/
+Completed 302 Found in 247ms (ActiveRecord: 146.8ms | Allocations: 8743)
+
+
+Started GET "/users/2/posts/" for ::1 at 2022-03-04 18:28:46 +0100
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mComment Load (2.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:28
+  Rendered posts/index.html.erb within layouts/application (Duration: 127.2ms | Allocations: 5643)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 204.3ms | Allocations: 12377)
+Completed 200 OK in 225ms (Views: 201.3ms | ActiveRecord: 5.8ms | Allocations: 15455)
+
+
+Started GET "/users/2/posts/new" for ::1 at 2022-03-04 18:28:49 +0100
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 307)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 70.8ms | Allocations: 6912)
+Completed 200 OK in 85ms (Views: 73.6ms | ActiveRecord: 0.4ms | Allocations: 9236)
+
+
+Started POST "/users/2/posts" for ::1 at 2022-03-04 18:29:14 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"post 2", "text"=>"hfgfh"}, "commit"=>"Post", "user_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/post.rb:9:in `update_posts_counter'
+  [1m[36mUser Update All (0.9ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 2]]
+  ↳ app/models/post.rb:9:in `update_posts_counter'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:26:in `block (2 levels) in create'
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "post 2"], ["text", "hfgfh"], ["comments_counter", 0], ["likes_counter", 0], ["created_at", "2022-03-04 17:29:14.279530"], ["updated_at", "2022-03-04 17:29:14.279530"], ["user_id", 2]]
+  ↳ app/controllers/posts_controller.rb:26:in `block (2 levels) in create'
+  [1m[36mTRANSACTION (8.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:26:in `block (2 levels) in create'
+Redirected to http://localhost:3000/users/2/posts/
+Completed 302 Found in 34ms (ActiveRecord: 11.4ms | Allocations: 5734)
+
+
+Started GET "/users/2/posts/" for ::1 at 2022-03-04 18:29:14 +0100
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN ($1, $2)[0m  [["post_id", 1], ["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:14
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 2], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:28
+  Rendered posts/index.html.erb within layouts/application (Duration: 16.0ms | Allocations: 3662)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 51.4ms | Allocations: 10363)
+Completed 200 OK in 64ms (Views: 50.9ms | ActiveRecord: 2.4ms | Allocations: 13259)
+
+
+Started GET "/users" for ::1 at 2022-03-04 18:29:30 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:1
+  Rendered users/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1657)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 58)
+  Rendered layout layouts/application.html.erb (Duration: 54.2ms | Allocations: 8162)
+Completed 200 OK in 63ms (Views: 55.3ms | ActiveRecord: 0.7ms | Allocations: 9839)
+
+
+Started GET "/api/v1/posts" for ::1 at 2022-03-04 18:29:37 +0100
+Processing by Api::V1::PostsController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (133.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:6:in `index'
+Completed 200 OK in 149ms (Views: 8.4ms | ActiveRecord: 133.8ms | Allocations: 3002)
+
+
+Started GET "/api/v1/posts/1/comments" for ::1 at 2022-03-04 18:33:49 +0100
+Processing by Api::V1::CommentsController#index as JSON
+  Parameters: {"post_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["post_id", 1]]
+  ↳ app/controllers/api/v1/comments_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 3.9ms | ActiveRecord: 0.8ms | Allocations: 2610)
+
+
