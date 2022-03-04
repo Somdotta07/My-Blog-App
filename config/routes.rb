@@ -10,4 +10,12 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create new update destroy]
     resources :likes, only: %i[create]
   end
+
+  namespace :api , defaults: { format: :json } do
+    namespace :v1 do
+      resources :posts, only: [:index] do
+        resources :comments, only: [:index, :create]
+      end
+    end
+  end
 end
