@@ -26,13 +26,13 @@ RSpec.describe 'api/v1/comments', type: :request do
       parameter name: :comment, in: :body, schema: {
         type: :object,
         properties: {
-          text: { type: :string },
+          text: { type: :string }
         },
-        required: [ 'text' ]
+        required: ['text']
       }
 
       response '201', 'comment created' do
-        let(:comment) { { text: 'foo'} }
+        let(:comment) { { text: 'foo' } }
         run_test!
       end
 
