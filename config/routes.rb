@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   devise_scope :user do 
     get '/users/sign_out' => 'devise/sessions#destroy' 
   end
-  root to: 'users#index'
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :users, only: %i[index show] do
     resources :posts, only: %i[index create new show destroy]
@@ -22,4 +22,5 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create new update destroy]
     resources :likes, only: %i[create]
   end
+  root to: 'users#index'
 end
