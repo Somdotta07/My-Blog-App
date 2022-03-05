@@ -8,6 +8,8 @@ gem 'devise'
 gem 'ffi'
 gem 'jquery-rails'
 gem 'rails-controller-testing'
+gem 'rswag-api'
+gem 'rswag-ui'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.2', '>= 7.0.2.2'
 
@@ -60,6 +62,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'rswag-specs'
 end
 
 group :development do
